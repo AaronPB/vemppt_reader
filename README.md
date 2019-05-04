@@ -3,6 +3,7 @@
 
 vemppt_reader reads VE.Direct Protocol and registers values from MPPT Devices into xls files
 
+<img src="images/header_image.JPG" >
 
 ## MPPT Connection
 
