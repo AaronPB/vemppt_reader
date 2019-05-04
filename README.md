@@ -12,7 +12,7 @@ This software is tested with a [VE.Direct to USB Interface cable](https://www.vi
 
 ## Installation
 
-vemppt_reader requires [pyserial](https://pypi.org/project/pyserial/), [xlwt](https://pypi.org/project/xlwt/) to run
+vemppt_reader requires [pyserial](https://pypi.org/project/pyserial/) and [xlwt](https://pypi.org/project/xlwt/) to run
 
 
 ```sh
