@@ -36,7 +36,7 @@ def xls_open(line):
 
     sheet.write(line, 0, "Read Time", style=header_style)
     sheet.write(line, 1, "Battery Voltage (V)", style=header_style)
-    sheet.write(line, 2, "Current (I)", style=header_style)
+    sheet.write(line, 2, "Current (A)", style=header_style)
     sheet.write(line, 3, "PV Voltage (V)", style=header_style)
     sheet.write(line, 4, "PV Power (W)", style=header_style)
     sheet.write(line, 5, "CS", style=header_style)
