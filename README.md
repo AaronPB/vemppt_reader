@@ -24,6 +24,14 @@ $ pip install xlwt
 
 ```
 
+## How to start with vemppt_reader
+
+You can test if you have installed all that vemppt_reader needs running vemppt_offtest.py (it will also generate a xls file)
+
+To use vemppt_reader, run vemppt_main.py
+> Before starting, make sure to put **the correct communication port** on it (in line 41 of vemppt_main.py).
+
+**To cancel any execution just use the terminate process order** `CTRL + C`
 
 ## VE.Direct Protocol Documentation
 
