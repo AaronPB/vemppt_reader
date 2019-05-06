@@ -18,9 +18,9 @@ vemppt_reader requires [pyserial](https://pypi.org/project/pyserial/) and [xlwt]
 
 ```sh
 
-$ pip install pyserial
+$ python -m pip install pyserial
 
-$ pip install xlwt
+$ python -m pip install xlwt
 
 ```
 
