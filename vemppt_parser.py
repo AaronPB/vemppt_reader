@@ -35,15 +35,27 @@ cs = {
 err = {
     0: 'No error',
     2: 'Battery voltage too high',
+    3: 'Remote temperature sensor failure',
+    4: 'Remote temperature sensor failure',
+    5: 'Remote temperature sensor failure (connection lost)',
+    6: 'Remote battery voltage sense failure',
+    7: 'Remote battery voltage sense failure',
+    8: 'Remote battery voltage sense failure (connection lost)',
     17: 'Charger temperature too high',
     18: 'Charger over current',
     19: 'Charger current reversed',
     20: 'Bulk time limit exceeded',
     21: 'Current sensor issue (sensor bias/sensor broken)',
     26: 'Terminals overheated',
+    28: 'Power stage issue',
     33: 'Input voltage too high (solar panel)',
     34: 'Input current too high (solar panel)',
     38: 'Input shutdown (due to excessive battery voltage)',
+    39: 'Input shutdown',
+    65: '[Info] Communication warning',
+    66: '[Info] Incompatible device',
+    67: 'BMS Connection lost',
+    114: 'CPU temperature too high',
     116: 'Factory calibration data lost',
     117: 'Invalid/incompatible firmware',
     119: 'User settings invalid'
@@ -56,12 +68,16 @@ mppt = {
     }
 
 def converter(packet,conv):
-    if conv == "cs":
-        return cs[int(packet)]
-    if conv == "err":
-        return err[int(packet)]
-    if conv == "mppt":
-        return mppt[int(packet)]
+    try:
+        if conv == "cs":
+            return cs[int(packet)]
+        if conv == "err":
+            return err[int(packet)]
+        if conv == "mppt":
+            return mppt[int(packet)]
+    except:
+        print("[!] Unrecognised value type of",conv)
+        return packet
 
 def parser(parse_line,line):
     parse_str = parse_line.decode("utf-8")
@@ -208,6 +224,6 @@ def parser(parse_line,line):
 
     #= NULL =#
     else:
-        print("Unrecognised data:",parse_line)
+        print("[!] Unrecognised data:",parse_line)
         return line
 
