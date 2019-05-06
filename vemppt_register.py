@@ -64,7 +64,10 @@ def xls_open(line):
     return line
 
 def xls_write(packet,column,line):
-    sheet.write(line,column,packet)
+    try:
+        sheet.write(line,column,packet)
+    except:
+        print("[!] Data not saved because it is overwriting other data!")
     return 0
 
 def xls_close(date):
