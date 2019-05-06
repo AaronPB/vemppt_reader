@@ -38,6 +38,8 @@ To use vemppt_reader, run vemppt_main.py
   - [VE.Direct Protocol - Version 3.25](https://www.victronenergy.com.es/download-document/2036/ve.direct-protocol-3.25.pdf)
 
   - [BlueSolar HEX protocol MPPT](https://www.victronenergy.com.es/download-document/4459/bluesolar-hex-protocol-mppt.pdf)
+  
+  - [MPPT Solar Charger Error Codes](https://www.victronenergy.com/live/mppt-error-codes)
 
 
 ## TO-DO List
