@@ -30,26 +30,29 @@ from datetime import datetime   #Register local dates
 def Mbox(title, text, style):
     return ctypes.windll.user32.MessageBoxW(0, text, title, style)
 
-#Value reset
-line = 0                            #Initial line in vemppt_register
-initial_date = datetime.now()       #Date register for xls file
+def main():
+    #Value reset
+    line = 0                            #Initial line in vemppt_register
+    initial_date = datetime.now()       #Date register for xls file
 
+    #Main thread
+    try:
+        ser = serial.Serial('COM5', 19200, timeout=10)      #Change here COM port
+        Mbox("MPPT Found","Correct port communication\nData registration will begin",64)
 
+        line = vemppt_register.xls_open(line)
 
-#Main thread
-try:
-    ser = serial.Serial('COM5', 19200, timeout=10)      #Change here COM port
-    Mbox("MPPT Found","Correct port communication\nData registration will begin",64)
+        while True:
+            ve_read = ser.readline()
+            line = vemppt_parser.parser(ve_read,line)
 
-    line = vemppt_register.xls_open(line)
+    except Exception as e:
+        logging.exception("An error ocurred")
+        Mbox("An error ocurred","Something went wrong!",16)
 
-    while True:
-        ve_read = ser.readline()
-        line = vemppt_parser.parser(ve_read,line)
-    
-except Exception as e:
-    logging.exception("An error ocurred")
-    Mbox("An error ocurred","Something went wrong!",16)
-finally:
-    ser.close()
-    vemppt_register.xls_close(initial_date)
+    finally:
+        ser.close()
+        vemppt_register.xls_close(initial_date)
+
+if __name__ == '__main__':
+    main()

@@ -227,3 +227,5 @@ def parser(parse_line,line):
         print("[!] Unrecognised data:",parse_line)
         return line
 
+if __name__ == '__main__':
+    print("[!] Wrong execution!\nPlease, run main.py or test the register with offtest.py")

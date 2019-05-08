@@ -20,17 +20,7 @@
 
 import xlwt                     #Save data into a .xls file
 from datetime import datetime   #Register local dates
-
-#= Global defines =#
-initial_date = datetime.now()
-register_values = xlwt.Workbook(encoding="utf-8")
-
-sheet = register_values.add_sheet(initial_date.strftime("MPPT_READ"),cell_overwrite_ok=False)
-
-#= xls Styles =#
-header_style = xlwt.easyxf("font: bold on; borders: bottom dashed")
-title_style = xlwt.easyxf("font: bold on")
-
+    
 #= Functions =#
 def xls_open(line):
 
@@ -78,3 +68,16 @@ def xls_close(date):
 TO-DO
 Asynchronous messages registration in a svg file
 """
+
+if __name__ == '__main__':
+    print("[!] Wrong execution!\nPlease, run main.py or test the register with offtest.py")
+else:
+    #= Global defines =#
+    initial_date = datetime.now()
+    register_values = xlwt.Workbook(encoding="utf-8")
+
+    sheet = register_values.add_sheet(initial_date.strftime("MPPT_READ"),cell_overwrite_ok=False)
+
+    #= xls Styles =#
+    header_style = xlwt.easyxf("font: bold on; borders: bottom dashed")
+    title_style = xlwt.easyxf("font: bold on")
