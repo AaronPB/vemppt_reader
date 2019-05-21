@@ -63,8 +63,8 @@ err = {
 
 mppt = {
     0: 'Off',
-    2: 'Voltage or current limited',
-    3: 'MPP Tracker active'
+    1: 'Voltage or current limited',
+    2: 'MPP Tracker active'
     }
 
 def converter(packet,conv):
@@ -76,11 +76,17 @@ def converter(packet,conv):
         if conv == "mppt":
             return mppt[int(packet)]
     except:
-        print("[!] Unrecognised value type of",conv)
+        print("[!] Unrecognised value type of",conv,":",packet)
         return packet
 
 def parser(parse_line,line):
-    parse_str = parse_line.decode("utf-8")
+    try:
+        parse_str = parse_line.decode("utf-8")
+    except:
+        print("[!] Cannot decode this:",parse_line,"\n    Skipping to next line...")
+        time.sleep(1)
+        line = line+1
+        return line
     #= Asynchronous message =#
     if ":A" in parse_str:
         print("Asynchronous message")
