@@ -45,3 +45,6 @@ To use vemppt_reader, run vemppt_main.py
 ## TO-DO List
 
   - Asynchronous message interpreter and register
+
+## License
+vemppt_reader is licensed under the GNU General Public License v3.0, detailed in the [LICENSE](https://github.com/AaronPB/vemppt_reader/blob/master/LICENSE) file.
