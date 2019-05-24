@@ -42,9 +42,10 @@ To use vemppt_reader, run vemppt_main.py
   - [MPPT Solar Charger Error Codes](https://www.victronenergy.com/live/mppt-error-codes)
 
 
-## TO-DO List
-
-  - Asynchronous message interpreter and register
+## TODO List
+ - [ ] Automatic USB port identification
+ - [ ] Disconnection handler with timeout requests
+ - [ ] Asynchronous message interpreter and register
 
 ## License
 vemppt_reader is licensed under the GNU General Public License v3.0, detailed in the [LICENSE](https://github.com/AaronPB/vemppt_reader/blob/master/LICENSE) file.
